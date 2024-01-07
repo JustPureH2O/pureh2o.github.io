@@ -46,7 +46,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-12-31T12:22:54.000Z">
-<meta property="article:modified_time" content="2024-01-06T09:27:04.172Z">
+<meta property="article:modified_time" content="2024-01-07T01:34:10.794Z">
 <meta property="article:author" content="JustPureH2O">
 <meta property="article:tag" content="整活">
 <meta property="article:tag" content="学术">
@@ -2347,7 +2347,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://cdn.luogu.com.cn/upload/usericon/612722.png","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1704589772750),
+    lastupdate: new Date(1704592833272),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2849,7 +2849,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h5 id="挂起为何物"><a class="markdownIt-Anchor" href="#挂起为何物"></a> 挂起为何物？</h5>
 <p>大家可能有过这样的经历：当你用WPS做PPT或者正在用WPS演示PPT时，有时它会莫名其妙地卡掉，尤其是你画了太多墨迹注释时，看着永不停歇转动的“繁忙”鼠标图标，你也许会耐不住性子直接任务管理器结束进程，<s>并发誓要下载一个破解版的微软Office全家桶来用</s>。像这样，程序的卡死就是挂起的一个形式，当然，当CPU面临有限的内存分配问题时，它会优先分配运存给那些需要内存的重要程序而把不那么重要的进程挂起，表现为对用户操作无响应等。</p>
 <p>那么你可能已经猜到了这一方法的逻辑了：我们挂起极域主进程。这样当教师端发送指令（黑屏安静、全屏广播等）时，你这边的极域接收端（学生端）就无法对指令作出响应，自然也就不会被控制。桌面监控同理，也会被影响，不同的是，教师端的监控小窗只会定格在你挂起极域前传输过来的最后一帧画面，总之瞒天过海是基本上没问题的了……</p>
-<p>根据上述原理，我们有三种方式来挂起一个进程：</p>
+<p>根据上述原理，我们有两种方式来挂起一个进程（其实本来还有Win32API这种方法，留给读者自行研究）：</p>
 <h5 id="第一种-性能监视器"><a class="markdownIt-Anchor" href="#第一种-性能监视器"></a> 第一种 性能监视器</h5>
 <p>你可以打开任务管理器，在“性能”一栏的左下角可以看到“性能监视器”选项（Win10），对于Win11用户，则需点击“性能”栏右上角三个点，然后选中“性能监视器”；也可以<code>Win+R</code>输入<code>perfmon.exe /res</code>直接打开（万能）。还有几种方法见<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/ae97a646b689aafafc461d60.html">百度百科</a>。</p>
 <p>在性能监视器中，我们在最上面“进程”列表中找到<code>StudentMain.exe</code>（一般来说有两个同样的进程），接着挨个右键点击“暂停进程（S）”即可。</p>
@@ -2859,6 +2859,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p><a target="_blank" rel="noopener" href="https://www.onlinedown.net/soft/10001768.htm">这里可以下载</a></p>
 <p>下载后的压缩文件里面有一个<code>.cmd</code>文件，用记事本打开：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br><span class="line">@set suspend_targets=osu!.exe DDLC.exe</span><br><span class="line">@suspend.exe %suspend_targets%</span><br><span class="line">pause</span><br><span class="line">@suspend.exe -r %suspend_targets%</span><br></pre></td></tr></table></figure>
+<p>其实我们真正需要修改的内容是第二行：它使用<code>bat</code>批处理脚本设置变量<code>suspend_targets</code>，传入需要挂起进程的进程名称<s>话说DDLC是真的生草……</s>。这里我们修改参数值为<code>StudentMain.exe</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br><span class="line">@set suspend_targets=StudentMain.exe</span><br><span class="line">@suspend.exe %suspend_targets%</span><br><span class="line">pause</span><br><span class="line">@suspend.exe -r %suspend_targets%</span><br></pre></td></tr></table></figure>
+<p><code>pause</code>之后的那一行是解除挂起的代码，因为<code>bat</code>执行到<code>pause</code>语句后会等待用户输入任意字符后才继续进行，因此如果遇到紧急情况需要解除挂起，只需在命令行窗口点击任意键即可。</p>
+<p>需要注意的是，一定要把下载好的压缩包里面的所有文件放到同一个目录下，否则缺失任何文件这个工具都是无法正常运行的。</p>
 <h4 id="板块五-留给2024的一个小问题"><a class="markdownIt-Anchor" href="#板块五-留给2024的一个小问题"></a> 板块五 留给2024的一个小问题</h4>
 <p>那天我在思考如何一劳永逸的结束极域进程，我打开了服务列表，在里面看到两个纯大写拼成的服务名<code>GATESRV</code>和<code>STUDSRV</code>。可惜的是那天放学，我没能来得及探究清楚这两个服务与极域的关系，目前已知的信息就是它们绝对是极域自己启动的两个服务。</p>
 <p>这个问题就留给2024的我解决吧</p>
@@ -2968,10 +2972,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-06T17:27:04+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-07T09:34:10+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：Jan 6, 2024</p>
+    <p>本页文档最后更新于：Jan 7, 2024</p>
   </a>
 </div>
 
@@ -4309,7 +4313,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2023/12/31/new-year-crack/","name":"2023年度总结——机房管理软件的破解经验"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2023年度总结——机房管理软件的破解经验","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2023/12/31/new-year-crack/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2023/12/31/new-year-crack/","wordCount":0,"datePublished":"2023-12-31T12:22:54.000Z","dateModified":"2024-01-06T09:27:04.172Z","keywords":"整活,学术,破解","image":{"@type":"ImageObject","url":"https://pic.imgdb.cn/item/658f966dc458853aef21ec93.png","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2023/12/31/new-year-crack/","name":"2023年度总结——机房管理软件的破解经验"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"2023年度总结——机房管理软件的破解经验","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2023/12/31/new-year-crack/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2023/12/31/new-year-crack/","wordCount":0,"datePublished":"2023-12-31T12:22:54.000Z","dateModified":"2024-01-07T01:34:10.794Z","keywords":"整活,学术,破解","image":{"@type":"ImageObject","url":"https://pic.imgdb.cn/item/658f966dc458853aef21ec93.png","width":1024,"height":768}}]</script>
 
 
 
