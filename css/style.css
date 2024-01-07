@@ -5465,7 +5465,7 @@ p.p.subtitle:first-child {
 }
 span.p.logo,
 p.p.logo {
-  font-family: Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-family: HFSnakylines, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
 }
 span.p.code,
 p.p.code {
@@ -6930,7 +6930,7 @@ pre {
   border-radius: 4px;
   -webkit-border-radius: 4px;
   color: var(--color-text);
-  font-family: Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: HYJiangJunJ, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
 }
 .aplayer .aplayer-list {
   text-align: left;
@@ -7661,4 +7661,40 @@ article#post > h3 {
 #l_main > article.cus-indent .note p,
 #l_main > article.cus-indent .tag p {
   text-indent: initial;
+}
+.article a:not([class]):not([data-fancybox]),
+.content > a {
+  position: relative;
+  text-decoration: none;
+}
+.article a:not([class]):not([data-fancybox]):before,
+.content > a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 1px;
+  width: 100%;
+  background: #ff5722;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -khtml-transform: scale(0);
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -khtml-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+}
+.article a:not([class]):not([data-fancybox]):hover:before,
+.content > a:hover:before {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -khtml-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
 }
