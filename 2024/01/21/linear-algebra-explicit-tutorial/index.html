@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://justpureh2o.github.io/archives/2023/12/"/>
+  
+  <link rel="canonical" href="https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,20 +34,24 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Archive: 2023/12 - JustPureH2O的博客</title>
-  <meta name="keywords" content="JustPureH2O,JustPureH2O's Blog">
+  <title>线性代数 简明教程 - JustPureH2O的博客</title>
+  <meta name="keywords" content="算法,学术,数学,教程,JustPureH2O,JustPureH2O's Blog">
   <meta desc name="description" content="JustPureH2O的小窝 - JustPureH2O - JustPureH2O的博客">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="JustPureH2O的博客">
-<meta property="og:url" content="https://justpureh2o.github.io/archives/2023/12/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数 简明教程">
+<meta property="og:url" content="https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/index.html">
 <meta property="og:site_name" content="JustPureH2O的博客">
-<meta property="og:description" content="JustPureH2O的小窝">
+<meta property="og:description" content="前言               一些前言           	         我个人认为我自己与线性代数的渊源是极深的。差不多整一年之前，初三上册的寒假，我在启动某二字二次元风格开放世界游戏时偶然做到了一个世界解谜。与平常无脑过的难度不同，这次的解谜可谓是充满血和汗水的教训——看攻略前千万要搞清楚站位和朝向……于是一步错步步错，耗费了整整半个小时才碰巧还原到原始的状态。自此便有了用严格的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-01-21T04:45:07.000Z">
+<meta property="article:modified_time" content="2024-01-21T08:07:43.416Z">
 <meta property="article:author" content="JustPureH2O">
-<meta property="article:tag" content="JustPureH2O">
-<meta property="article:tag" content="JustPureH2O&#39;s Blog">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="学术">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2336,7 +2340,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2438,7 +2442,7 @@ p.spoiler {
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2765,94 +2769,14 @@ p.spoiler {
     <div id="l_body">
       <div id="l_cover">
   
-    
-      <div class="cover-wrapper  dock" id='half'>
-        
-  <div id="parallax-window"></div>
-
-<div class='cover-body'>
-  <div class='top'>
-    
-    
-      <p class="title">JustPureH2O</p>
-    
-    
-      <p class="subtitle">深水里摸大鱼</p>
-    
-  </div>
-  <div class='bottom'>
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
-              <i class='fa-solid fa-file-archive fa-fw'></i><p>归档</p>
-            </a>
-          
-            <a href="/dcdoujin/"
-              
-              
-              active-action="action-dcdoujin">
-              <img src='https://pic.imgdb.cn/item/6546ffaec458853aefb363d8.png'><p>DCD</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://github.com/JustPureH2O/justpureh2o.github.io"
-              
-              
-              active-action="action-https:githubcomJustPureH2Ojustpureh2ogithubio">
-              <i class='fa-solid fa-code-branch fa-fw'></i><p>源码</p>
-            </a>
-          
-            <a href="/friends/"
-              
-              
-              active-action="action-friends">
-              <i class='fa-solid fa-link fa-fw'></i><p>友链</p>
-            </a>
-          
-            <a href="mailto:justpureh2o@outlook.com"
-              
-              
-              active-action="action-mailto:justpureh2o@outlookcom">
-              <i class='fa-solid fa-file-signature fa-fw'></i><p>留言</p>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    
-  
 </div>
 
       <div id="safearea">
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://justpureh2o.github.io/2023/12/31/new-year-crack/">
+  <article class=" article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="JustPureH2O的博客">
   </span>
@@ -2861,279 +2785,249 @@ p.spoiler {
     <meta itemprop="description" content="JustPureH2O的小窝">
   </span>
   
-  
+
+
   
     <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/31/new-year-crack/">
-        <img itemprop="image" class='headimg' alt="2023年度总结——机房管理软件的破解经验" src='https://pic.imgdb.cn/item/658f966dc458853aef21ec93.png'/>
+      <a class='headimg-a'>
+        <img itemprop="image" class='headimg' src='https://pic.imgdb.cn/item/65acd0a3871b83018acf5225.png'/>
       </a>
+    </div>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        线性代数 简明教程
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://github.com/volantis-x/" rel="nofollow noopener">
+    <img itemprop="image" src="https://cdn.luogu.com.cn/upload/usericon/612722.png" class="lazyload" data-srcset="https://cdn.luogu.com.cn/upload/usericon/612722.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">JustPureH2O</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-01-21T12:45:07+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 21, 2024</p>
+  </a>
+</div>
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p><img src="https://pic.imgdb.cn/item/65acd0a3871b83018acf5225.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/65acd0a3871b83018acf5225.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
+<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<div class='collapsible collapsed'>
+    <div class='collapsible-title'>
+        一些前言
+    </div>
+    <div class='collapsible-content'>
+	<p></p>
+        <p>我个人认为我自己与线性代数的渊源是极深的。差不多整一年之前，初三上册的寒假，我在启动某二字二次元风格开放世界游戏时偶然做到了一个世界解谜。与平常无脑过的难度不同，这次的解谜可谓是充满血和汗水的教训——看攻略前千万要搞清楚站位和朝向……于是一步错步步错，耗费了整整半个小时才碰巧还原到原始的状态。自此便有了用严格的数学论证来解决这种世界解谜的想法，然而苦于当时数学功底不够、那些线上线下的教程又对我这种“跳级生”极其的不友好，最终还是将它抛到脑后去了。</p>
+<p>但是我最开始想做关于线性代数的内容却是在高一上期末那会，刚好我的竞赛内容推进到了高斯消元相关内容，因而我对线性代数的内容有了一定了解。正巧年末购书有优惠，买了一本Steven J. Leon的《线性代数》（原书第十版）自己学习。深谙零基础学生自学的痛苦的我随即就想要上一篇全网最简明易懂的线性代数教程出来，这篇教程旨在让零基础初学者也能吸收学会线性代数的相关知识点。你可以将它理解成上述《线性代数》著作的一个口语版理解和集注，我所做的就是将书中的晦涩的知识自己吸收后转化为易于读者消化的简明概述。也正是因为其趣味性的必需特点，部分科学定义可能在本教程转述时出现细微的偏颇，还请指出，但在编写过程中我会尽量将原书的科学性与本教程的趣味性、通俗性有机融合起来，从而让读者毫不费力地学习线性代数的知识内容，快乐学习。</p>
+  <span class="spoiler" onclick="this.classList.toggle('spoiler')">
+    <span class="spoiler-blur ">本博客的LaTeX公式渲染出现了一些问题，目前还未修复，读者会在公式区域看到一个正常显示的公式和一个崩坏且未渲染的公式，这个问题将被尽快修复</span>
+  </span>
+
+	<p></p>	
+    </div>
+</div><link rel="stylesheet" href="/css/collapsible.css" type="text/css"><script src="/js/collapsible.js" type="text/javascript" async></script>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
     </div>
   
   
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/31/new-year-crack/"  itemprop="url">
-        2023年度总结——机房管理软件的破解经验
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
       
         
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-21T16:07:43+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：Jan 21, 2024</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E6%9C%AF/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学术</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E5%AD%A6/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>数学</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div>
+  <span hidden itemprop="keywords">算法 学术 数学 教程</span>
+  
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/&title=线性代数 简明教程 - JustPureH2O的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/&title=线性代数 简明教程 - JustPureH2O的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/&title=线性代数 简明教程 - JustPureH2O的博客&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/12/31/new-year-crack/'>
+          <p class='title'>2023年度总结——机房管理软件的破解经验<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
 文中提到的核心程序代码及食用方法在文章末尾处，或者访问我的云剪贴板来复制代码
  极域——世界上最弱小最单纯的机房软件
-注意，极域由C/C++语言开发。对于极域的反编译工作可以基本认定为徒劳且耗费大量时间的。
-开始的开始，我的脱控方式还仅限于最原始的taskkill和ntsd。这种做法不仅有时会失效，而且一旦老师发现你的机子的监控屏幕是纯黑一片、且无法控制，他就会气急败坏地冲向你对你进行一顿...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/volantis-x/'><img src='https://cdn.luogu.com.cn/upload/usericon/612722.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/612722.png">
-            <meta itemprop="name" content="JustPureH2O">
-            <meta itemprop="url" content="https://github.com/volantis-x/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-31T20:22:54+08:00">2023-12-31</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/31/new-year-crack/' itemprop="url">
-            Read More
-          </a>
-        </div>
+注意，极域由C/C++语言开发。对于极域的反编译工作可以基本认定为徒劳且耗...</p>
+        </a>
       
     </div>
   
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://justpureh2o.github.io/2023/12/03/dcdep1-release/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="JustPureH2O的博客">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="JustPureH2O的博客">
-    <meta itemprop="description" content="JustPureH2O的小窝">
-  </span>
+  <!-- 文章推荐 -->
   
   
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/12/03/dcdep1-release/">
-        <img itemprop="image" class='headimg' alt="DC Doujin 2023 EP1 一触即发正式发布" src='https://pic.imgdb.cn/item/65471de4c458853aef1a9ab7.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/12/03/dcdep1-release/"  itemprop="url">
-        DC Doujin 2023 EP1 一触即发正式发布
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
+  <!-- Custom Files postEnd begin-->
+  <article class=" article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <!-- Custom Files postEnd end-->
+</article>
 
 
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/volantis-x/'><img src='https://cdn.luogu.com.cn/upload/usericon/612722.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://cdn.luogu.com.cn/upload/usericon/612722.png">
-            <meta itemprop="name" content="JustPureH2O">
-            <meta itemprop="url" content="https://github.com/volantis-x/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-12-03T13:02:42+08:00">2023-12-03</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/12/03/dcdep1-release/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
   
 
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
   
 
 
-	
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
 
   
-
-  
-
-  
     
     
       
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget grid desktop mobile">
-  
-  <header>
-    
-      <i class="fa-solid fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>分类导航</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="grid navigation fixed">
-      
-        <a class="flat-box" href="/dcdoujin/"
-          
-          
-          active-action="action-dcdoujin">
-          
-            <img src="https://pic.imgdb.cn/item/6546ffaec458853aefb363d8.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/6546ffaec458853aefb363d8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-          DC Doujin
-        </a>
-      
-        <a class="flat-box" href="/archives/"
-          
-          
-          active-action="action-archives">
-          
-            <i class="fa-solid fa-file-alt fa-fw" aria-hidden="true"></i>
-          
-          归档文章
-        </a>
-      
-        <a class="flat-box" href="/friends/"
-          
-          
-            target="_blank"
-          
-          active-action="action-friends">
-          
-            <i class="fa-solid fa-user-friends fa-fw" aria-hidden="true"></i>
-          
-          友情链接
-        </a>
-      
-        <a class="flat-box" href="https://github.com/JustPureH2O/justpureh2o.github.io"
-          
-            rel="external nofollow noopener noreferrer"
-          
-          
-            target="_blank"
-          
-          active-action="action-https:githubcomJustPureH2Ojustpureh2ogithubio">
-          
-            <i class="fa-solid fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          本站源码
-        </a>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget blogger desktop mobile ">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://cdn.luogu.com.cn/upload/usericon/612722.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>JustPure<b><span style="color:#0080c0">H</span><sub style="color:#ff9800">2</sub><span style="color:#0080c0">O</span></b></h2>
-        
-        
-          <p>吃食中…</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:justpureh2o@outlook.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/JustPureH2O/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li></ol>
+  </div>
+</section>
+
+  
 
 </div>
 
@@ -3141,6 +3035,7 @@ p.spoiler {
   
   <!-- Custom Files side end -->
 </aside>
+
 
 
         </div>
@@ -4328,7 +4223,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://justpureh2o.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/archives/2023/","name":"2023"}},{"@type":"ListItem","position":4,"item":{"@id":"https://justpureh2o.github.io/archives/2023/12/","name":"12"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/","name":"线性代数 简明教程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"线性代数 简明教程","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2024/01/21/linear-algebra-explicit-tutorial/","wordCount":0,"datePublished":"2024-01-21T04:45:07.000Z","dateModified":"2024-01-21T08:07:43.416Z","keywords":"算法,学术,数学,教程","image":{"@type":"ImageObject","url":"https://pic.imgdb.cn/item/65acd0a3871b83018acf5225.png","width":1024,"height":768}}]</script>
 
 
 

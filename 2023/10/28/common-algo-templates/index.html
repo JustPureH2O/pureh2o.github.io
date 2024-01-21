@@ -27,7 +27,7 @@
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
-    <link rel="shortcut icon" type='image/x-icon' href="https://molview.org/favicon-32x32.png">
+    <link rel="shortcut icon" type='image/x-icon' href="https://pic.imgdb.cn/item/65acc265871b83018a982471.png">
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://justpureh2o.github.io/fonts/HFSnakylines.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://justpureh2o.github.io/fonts/HYJiangJun-J.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -35,7 +35,7 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>常用算法模板 - JustPureH2O的博客</title>
-  <meta name="keywords" content="学术,算法,OI,JustPureH2O,JustPureH2O's Blog">
+  <meta name="keywords" content="算法,学术,OI,JustPureH2O,JustPureH2O's Blog">
   <meta desc name="description" content="JustPureH2O的小窝 - JustPureH2O - JustPureH2O的博客">
   
 <meta property="og:type" content="article">
@@ -48,8 +48,8 @@
 <meta property="article:published_time" content="2023-10-28T06:11:51.000Z">
 <meta property="article:modified_time" content="2023-11-05T02:33:44.995Z">
 <meta property="article:author" content="JustPureH2O">
-<meta property="article:tag" content="学术">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="学术">
 <meta property="article:tag" content="OI">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2347,7 +2347,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://cdn.luogu.com.cn/upload/usericon/612722.png","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1704603085394),
+    lastupdate: new Date(1705824500638),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2404,7 +2404,37 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files headEnd begin-->
   
   <!-- Custom Files headEnd end-->
-</head>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 0px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <!-- import body_begin begin-->
     <!-- import body_begin end-->
@@ -2876,7 +2906,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </div><div class="story post-story"><h2 id="背包类动态规划-混合背包"><a class="markdownIt-Anchor" href="#背包类动态规划-混合背包"></a> 背包类动态规划      混合背包</h2>
 <p>混合背包，顾名思义。它混合了多种背包，实际应用中这一类问题比较有现实意义。主要思路是，将分属于各个类型背包的物品用几个条件判断语句写出来，然后分别套用各类背包的解决方案进行求解。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 100010</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> w[N], v[N], dp[N];</span><br><span class="line"><span class="comment">//  价值  占地  容量上限为N时最大价值 </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (A) &#123;</span><br><span class="line">			<span class="comment">// 01背包物品，写01背包模板 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (B) &#123;</span><br><span class="line">			<span class="comment">// 完全背包物品，写完全背包模板 </span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (C) &#123;</span><br><span class="line">			<span class="comment">// 其他…… </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
+<link rel="stylesheet" href="/css/collapsible.css" type="text/css"><script src="/js/collapsible.js" type="text/javascript" async></script>
 </div>
   </div>
   
@@ -2915,8 +2945,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E6%9C%AF/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学术</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div>
-  <span hidden itemprop="keywords">学术 算法 OI</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E6%9C%AF/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>学术</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/OI/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>OI</p></a></div>
+  <span hidden itemprop="keywords">算法 学术 OI</span>
   
 
 
@@ -4250,7 +4280,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2023/10/28/common-algo-templates/","name":"常用算法模板"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"常用算法模板","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2023/10/28/common-algo-templates/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2023/10/28/common-algo-templates/","wordCount":0,"datePublished":"2023-10-28T06:11:51.000Z","dateModified":"2023-11-05T02:33:44.995Z","keywords":"学术,算法,OI","image":{"@type":"ImageObject","url":"https://pic.imgdb.cn/item/6546feebc458853aefb12a03.png","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2023/10/28/common-algo-templates/","name":"常用算法模板"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"常用算法模板","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2023/10/28/common-algo-templates/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2023/10/28/common-algo-templates/","wordCount":0,"datePublished":"2023-10-28T06:11:51.000Z","dateModified":"2023-11-05T02:33:44.995Z","keywords":"算法,学术,OI","image":{"@type":"ImageObject","url":"https://pic.imgdb.cn/item/6546feebc458853aefb12a03.png","width":1024,"height":768}}]</script>
 
 
 
