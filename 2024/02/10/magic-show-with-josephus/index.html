@@ -34,19 +34,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>这魔术，我约瑟夫秒了！ - JustPureH2O的博客</title>
+  <title>约瑟夫环——春晚魔术表演原理解析 - JustPureH2O的博客</title>
   <meta name="keywords" content="学术,整活,数学,JustPureH2O,JustPureH2O's Blog">
   <meta desc name="description" content="JustPureH2O的小窝 - JustPureH2O - JustPureH2O的博客">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="这魔术，我约瑟夫秒了！">
+<meta property="og:title" content="约瑟夫环——春晚魔术表演原理解析">
 <meta property="og:url" content="https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/index.html">
 <meta property="og:site_name" content="JustPureH2O的博客">
 <meta property="og:description" content="（操作没成功の尴尬，图片来自知乎）  前言 这篇文章从数学方面推导刘谦2024年央视春晚上表演的第二个魔术的秘密、分析尼格买提错误之处，并在已知信息的加持下尝试推测尼格买提手上所剩的两张半面扑克牌的牌型。有一说一撒贝宁是真的会测假 对应魔术节目：《守岁共此时》的回看请戳这里，在一小时十分整处。  魔术步骤  四张牌面向下，并打乱。 对折四张牌，并沿折痕撕开，得到两批半牌，每批四个共八个半牌 （反">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-02-10T08:23:45.000Z">
-<meta property="article:modified_time" content="2024-02-10T11:21:28.619Z">
+<meta property="article:modified_time" content="2024-02-10T11:27:59.796Z">
 <meta property="article:author" content="JustPureH2O">
 <meta property="article:tag" content="学术">
 <meta property="article:tag" content="整活">
@@ -2347,7 +2347,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://cdn.luogu.com.cn/upload/usericon/612722.png","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1707564102661),
+    lastupdate: new Date(1707564628491),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2798,7 +2798,7 @@ p.spoiler {
     
     
       <h1 class="title" itemprop="name headline">
-        这魔术，我约瑟夫秒了！
+        约瑟夫环——春晚魔术表演原理解析
       </h1>
       <div class='new-meta-box'>
         
@@ -2884,6 +2884,7 @@ p.spoiler {
 <p>拿出藏起来的牌C，我们开头就知道了：第三张牌被分成了3和C。也就是说它们可以拼合成同一张牌！魔术成功了！</p>
 <h3 id="回顾总结"><a class="markdownIt-Anchor" href="#回顾总结"></a> 回顾总结</h3>
 <p>不妨从一开始就观察<code>3</code>和<code>C</code>的变换规律，可以发现<code>3</code>号牌自从第三步结束后被移动到最下边以来就几乎没改变过位置；而前四步则是合力将<code>C</code>拉到了最前边好让它被顺利地挑出去。然而最为精妙的还是对“1、2、1、2……”报数约瑟夫环模型的应用。那么为什么尼格买提的操作会失败呢？看下图：</p>
+<p>如果你是罕见的“第三性别”，想要在第七步里面丢三张牌，也是可以的，因为这样并不会改变最后一张牌<code>3</code>。事实上，这个魔术最多可以在第七步丢掉七张牌，这样下来就只会剩下一张牌<code>3</code>，全部完成之后还是可以和<code>C</code>配对成功的。</p>
 <p><img src="https://pic.imgdb.cn/item/65c753f19f345e8d0372d304.png" class="lazyload" data-srcset="https://pic.imgdb.cn/item/65c753f19f345e8d0372d304.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" /></p>
 <p>右上角是他的操作：他在“南方人和北方人”的操作里拿了三张牌，但是插入的时候错误将其中两张牌插到了最下边并且这两张牌和另外的那一张牌分开了（原规则是一起插到中间）。</p>
 <p>因此这堆牌的底端变成了<strong>黑桃Q</strong>，不久之前，他藏起了一张<strong>黑桃A</strong>。所以，他最后拿出的牌是对不上的，一张是黑桃A，一张是黑桃Q。</p>
@@ -2915,7 +2916,7 @@ p.spoiler {
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-10T19:21:28+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-02-10T19:27:59+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>本页文档最后更新于：Feb 10, 2024</p>
@@ -2944,7 +2945,7 @@ p.spoiler {
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/&title=这魔术，我约瑟夫秒了！ - JustPureH2O的博客&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/&title=约瑟夫环——春晚魔术表演原理解析 - JustPureH2O的博客&summary="
           
           >
           
@@ -2956,7 +2957,7 @@ p.spoiler {
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/&title=这魔术，我约瑟夫秒了！ - JustPureH2O的博客&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/&title=约瑟夫环——春晚魔术表演原理解析 - JustPureH2O的博客&summary="
           
           >
           
@@ -2968,7 +2969,7 @@ p.spoiler {
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/&title=这魔术，我约瑟夫秒了！ - JustPureH2O的博客&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/&title=约瑟夫环——春晚魔术表演原理解析 - JustPureH2O的博客&summary="
           
           >
           
@@ -4257,7 +4258,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/","name":"这魔术，我约瑟夫秒了！"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"这魔术，我约瑟夫秒了！","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/","wordCount":0,"datePublished":"2024-02-10T08:23:45.000Z","dateModified":"2024-02-10T11:21:28.619Z","keywords":"学术,整活,数学","image":{"@type":"ImageObject","url":"https://pica.zhimg.com/80/v2-bb68dd52b427d97ca4387c2ea0f9e6db_1440w.webp?source=2c26e567","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","sameAs":["https://github.com/volantis-x"],"description":"JustPureH2O的小窝"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://justpureh2o.github.io/","name":"JustPureH2O的博客"}},{"@type":"ListItem","position":3,"item":{"@id":"https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/","name":"约瑟夫环——春晚魔术表演原理解析"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","keywords":["JustPureH2O","JustPureH2O's Blog"],"description":"JustPureH2O的小窝","author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/","description":"JustPureH2O的小窝"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","url":"https://justpureh2o.github.io/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://justpureh2o.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"约瑟夫环——春晚魔术表演原理解析","description":"JustPureH2O的小窝","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/"},"author":{"@type":"Person","name":"JustPureH2O","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://justpureh2o.github.io/"},"publisher":{"@type":"Organization","name":"JustPureH2O的博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://justpureh2o.github.io/2024/02/10/magic-show-with-josephus/","wordCount":0,"datePublished":"2024-02-10T08:23:45.000Z","dateModified":"2024-02-10T11:27:59.796Z","keywords":"学术,整活,数学","image":{"@type":"ImageObject","url":"https://pica.zhimg.com/80/v2-bb68dd52b427d97ca4387c2ea0f9e6db_1440w.webp?source=2c26e567","width":1024,"height":768}}]</script>
 
 
 
