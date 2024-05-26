@@ -1,0 +1,100 @@
+name: 自动部署 Hexo
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: 开始运行
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+        
+      - name: 安装Pandoc
+        uses: nikeee/setup-pandoc@v1
+        
+      - name: 设置 Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 安装 Hexo CI
+        run: |
+          export TS='Asia/Shanghai'
+          npm install hexo-cli -g
+
+      - name: 缓存
+        uses: actions/cache@v1
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
+          
+      - name: 清除缓存
+        run: |
+          sudo rm -rf node_modules
+          sudo rm package-lock.json
+          npm cache clear --force       
+          
+      - name: 安装依赖插件
+        run: |
+          npm install mathjax
+          npm install hexo-wordcount
+          npm install eslint
+          npm install hexo-abbrlink
+          npm install hexo-renderer-stylus
+          npm install hexo-generator-json-content
+          npm install stylus
+          npm install stylus-loader
+          npm install hexo-generator-sitemap
+          npm install hexo-generator-baidu-sitemap
+          npm install hexo-tag-cloud
+          echo Complete Install
+          
+      - name: 安装插件
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: |
+          npm install
+          echo Complete NPM install
+          
+      - name: 配置SSH私钥
+        env:
+          HEXO_DEPLOY_PRIVATE_KEY: ${{secrets.GIT_PRI}}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa 
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts      
+
+      - name: 部署博客
+        run: | 
+          git config --global credential.helper store
+          git config --global init.defaultBranch master
+          git config --global user.name "${{secrets.GIT_NAME}}"
+          git config --global user.email "${{secrets.GIT_EMAIL}}" 
+          git config --global user.password "${{secrets.GIT_PSW}}"
+          echo -------- Submodules Begin --------
+          git submodule status
+          git submodule init
+          git submodule update --remote --merge
+          cd themes/volantis
+          git checkout 6.0
+          cd ../..
+          echo -------- Submodules End --------
+          hexo clean
+          hexo g
+          hexo d
+          cd ./public
+          git init
+          git add .
+          git commit -m 'Update Post and Theme Submodule'
+          git push --force --quiet 'https://${{secrets.GH_TOKEN}}@github.com/${{secrets.GH_REF}}' master
+          echo Build OK!

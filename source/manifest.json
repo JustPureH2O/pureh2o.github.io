@@ -1,0 +1,15 @@
+{
+  "short_name": "JustPureH2O",
+  "name": "JustPureH2O的博客",
+  "icons": [
+    {
+      "src": "https://pic.imgdb.cn/item/65acc265871b83018a982471.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "./index.html"
+}

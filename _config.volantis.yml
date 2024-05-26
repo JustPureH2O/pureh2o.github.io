@@ -1,0 +1,378 @@
+debug: false
+content_visibility: true
+navbar:
+  logo: # choose [img] or [icon + title]
+    img: '' # volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png
+    icon:
+    title: 'JustPure<b><span style="color:#0080c0">H</span><sub style="color:#ff9800">2</sub><span style="color:#0080c0">O</span></b>'
+  menu:
+    - name: 文章
+      icon: fa-duotone fa-book
+      url: /archives/
+    - name: 说说
+      icon: fa-duotone fa-pencil-alt
+      url: /talks/
+    - name: 友链
+      icon: fa-duotone fa-link
+      url: /friends/
+    - name: 关于
+      icon: fa-duotone fa-info-circle
+      url: /about/
+    - name: hr
+    - name: 夜间模式
+      icon: fa-duotone fa-moon
+      toggle: darkmode
+    - name: 更多
+      icon: fa-duotone fa-ellipsis-h
+      rows:
+        - name: 本站源码
+          icon: fa-duotone fa-code
+          url: https://github.com/JustPureH2O/justpureh2o.github.io
+        - name: 主题源码
+          icon: fa-duotone fa-code-branch
+          url: https://github.com/JustPureH2O/hexo-theme-volantis
+              
+cover:
+  # height_scheme: full # full, half
+  title: 'JustPure<span style="color:#0080C0">H</span><sub style="color:#FF9800">2</sub><span style="color:#0080C0">O</span>'
+  subtitle: '穷方圆平直之情，尽规矩准绳之用'
+  background: # https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  features:
+    - name: 归档
+      icon: fa-duotone fa-file-archive
+      url: /archives/
+    - name: 随笔
+      icon: fa-duotone fa-pencil-alt
+      url: /talks/
+    - name: 友链
+      icon: fa-duotone fa-link
+      url: /friends/
+    - name: 留言
+      icon: fa-duotone fa-file-signature
+      url: mailto:justpureh2o@outlook.com
+
+article:
+  preview:
+    scheme: landscape # landscape
+    # pin icon for post
+    pin_icon: # volantis-static/media/twemoji/assets/svg/1f4cc.svg
+    # auto generate title if not exist
+    auto_title: true # false, true
+    # auto generate excerpt if not exist
+    auto_excerpt: true # false, true
+    author: true
+    # show readmore button
+    readmore: auto # auto, always
+  body:
+    top_meta: [author, category, date, wordcount]
+    meta_library:
+      wordcount:
+        icon_wordcount: fas fa-keyboard
+        icon_duration: fas fa-hourglass-half
+      author:
+        avatar: https://pic.imgdb.cn/item/6540c4c2c458853aef80926e.png
+        name: JustPureH2O
+        url: /about/
+      updated:
+        title: '本页文档最后更新于：'
+
+
+comments:
+  service: 
+  giscus:
+    theme:
+      light: "light"
+      dark: "dark"
+    repo: volantis-x/community
+    repo-id: MDEwOlJlcG9zaXRvcnkyNDIzNjY1ODM=
+    mapping: "number"
+    term: "145"
+    reactions-enabled: "1"
+    emit-metadata: "0"
+    lang: "zh-CN"
+    input-position: "top"
+  disqus:
+    shortname: volantis
+    path: /
+  valine:
+    appId: FIKAgh6n0pUM08JXxhJHChVQ-MdYXbMMI
+    appKey: RJGiOYFc1fBvfox4frBPpRzU
+    path: /
+  utterances:
+    repo: volantis-x/community
+    issue-number: 115
+  beaudar:
+    repo: volantis-x/community  
+    issue-number: 115
+sidebar:
+  for_page: [pin, blogger, tagcloud, category, guide, webinfo]
+  for_post: [toc]
+  widget_library:
+    toc:
+      class: toc
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fa-duotone fa-list
+        title: 本文目录
+      list_number: true
+      min_depth: 1
+      max_depth: 5
+    pin:
+      class: list
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fas fa-location-pin
+        title: 置顶推荐
+      rows:
+        - name: 领域展开，坐杀极域
+          url: /articles/64010/
+    blogger:
+      class: blogger
+      display: [desktop] # [desktop, mobile]
+      avatar: https://pic.imgdb.cn/item/6607d8f89f345e8d03288980.jpg # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      shape: circle # circle, rectangle
+      url: /about/
+      title: '<span class="p logo">JustPure<span style="color:#0080C0">H</span><sub style="color:#FF9800">2</sub><span style="color:#0080C0">O</span></span>'
+      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      social:
+        - icon: fa-duotone fa-envelope
+          url: mailto:justpureh2o@outlook.com
+        - icon: fab fa-github 
+          url: https://github.com/JustPureH2O/
+    tagcloud:
+      class: tagcloud
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fa-duotone fa-tags
+        title: 标签云图
+        url: /tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: '#999'
+      end_color: '#555'   
+    guide:
+      class: grid
+      display: [desktop] # [desktop, mobile]
+      header:
+        icon: fa-duotone fa-map-signs
+        title: 分类导航
+      fixed: true # 固定宽度
+      rows:
+        - name: 归档文章
+          icon: fa-duotone fa-file-alt
+          url: /archives/
+        - name: 友情链接
+          icon: fa-duotone fa-user-friends
+          url: /friends/
+          target: _blank
+        - name: 随笔说说
+          icon: fa-duotone fa-pencil-alt
+          url: /talks/
+          target: _blank
+    webinfo:
+      class: webinfo
+      display: [desktop]
+      header:
+        icon: fa-duotone fa-award
+        title: 站点信息
+      type:
+        article:
+          enable: true
+          text: '文章数目：'
+          unit: '篇'
+        runtime:
+          enable: true
+          data: '2023/10/25'    # 填写建站日期
+          text: '已运行时间：'
+          unit: '天'
+        wordcount:
+          enable: true
+          text: '本站总字数：'   # 需要启用 wordcount
+          unit: '字'
+        visitcounter:
+          siteuv:
+            enable: true
+            text: '本站访客数：'
+            unit: '人'
+          sitepv:
+            enable: true
+            text: '本站总访问量：'
+            unit: '次'
+        lastupd:
+          enable: true
+          friendlyShow: true    # 更友好的时间显示
+          text: '最后活动时间：'
+          unit: '日'    
+
+site_footer:
+  layout: [aplayer, social, license, copyright, qexo_info]
+  copyright: '[Copyright © Since 2023 JustPureH2O](https://github.com/JustPureH2O)'
+  license: '[CC-BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
+  qexo_info: '本网站使用[Qexo](https://www.oplog.cn/qexo/)进行后端管理'
+  social:
+    - icon: fab fa-github
+      url: https://github.com/JustPureH2O
+    - icon: fa-duotone fa-envelope
+      url: mailto:justpureh2o@outlook.com
+      
+tag_plugins:
+  # {% note text %}
+  note: # style for default note:
+    iconfont: 'Font Awesome 6 Pro'
+    
+plugins:
+  wordcount:
+    enable: true
+  clipboard:
+    enable: true
+  fontawesome: https://unpkg.com/volantis-static@0.0.1649552113628/libs/@fortawesome/fontawesome-pro/css/all.min.css
+  parallax:
+    enable: true
+    images:
+      - https://pic.imgdb.cn/item/65f5a7cf9f345e8d03964dbc.jpg
+      - https://pic.imgdb.cn/item/65f5a7c69f345e8d03960425.jpg
+      - https://pic.imgdb.cn/item/65f5a7c69f345e8d03960250.jpg
+      - https://pic.imgdb.cn/item/65f5a7c59f345e8d03960141.jpg
+      - https://pic.imgdb.cn/item/65f5a7c59f345e8d0395ff6d.jpg
+      - https://pic.imgdb.cn/item/65f5a7c59f345e8d0395fdf7.jpg
+      - https://pic.imgdb.cn/item/65f5acc59f345e8d03bdfcf6.jpg
+      - https://pic.imgdb.cn/item/65f64e899f345e8d03453850.jpg
+      - https://pic.imgdb.cn/item/6607b08a9f345e8d032c0e91.jpg
+      - https://pic.imgdb.cn/item/6607c8cc9f345e8d03c37157.jpg
+      - https://pic.imgdb.cn/item/65c9e1cb9f345e8d031859ff.jpg
+      - https://pic.imgdb.cn/item/6610c34568eb93571349895c.jpg
+      - https://pic.imgdb.cn/item/661fa9270ea9cb14035f9810.png
+      - https://pic.imgdb.cn/item/661faf180ea9cb140394b7ad.jpg
+      - https://pic.imgdb.cn/item/661fb4640ea9cb1403c5d0df.jpg
+      - https://pic.imgdb.cn/item/661fb46f0ea9cb1403c64433.jpg
+      - https://pic.imgdb.cn/item/662b8e430ea9cb140332e110.jpg # 白洲梓（水）
+      - https://pic.imgdb.cn/item/662b8dff0ea9cb1403325348.jpg # 狐坂若藻
+      - https://pic.imgdb.cn/item/662b8dff0ea9cb1403325250.jpg # 月雪宫子
+      - https://pic.imgdb.cn/item/662b8dfe0ea9cb14033250b5.jpg # 天童爱丽丝
+      - https://pic.imgdb.cn/item/662b8dfe0ea9cb140332519d.jpg # 栗村爱莉
+      - https://pic.imgdb.cn/item/662b8dff0ea9cb14033252a6.jpg # 鬼方佳世子
+      - https://pic.imgdb.cn/item/66406ca80ea9cb1403e3c8d7.png # 星期日+知更鸟
+      - https://pic.imgdb.cn/item/6648a851d9c307b7e9dc3e75.jpg # 白洲梓，伊甸园条约CG
+    info: /banners/
+  busuanzi:
+    enable: true
+  aplayer:
+    enable: true
+    autoplay: false
+    volume: 0.4
+    order: random
+    # id: 4917530132 # vol red
+    # id: 4917524698 # vol blue
+    # id: 76244489 # vol white
+    # id: 5135845906 # for Volantis 3.0
+    id: 8416045336 # Melodic Dubstep
+  message:          # 音乐通知，播放、暂停、失败 时的图标
+    enable: true
+    icon:     # 默认图标，支持对图标添加颜色，可选值：see：/source/css/_plugins/message.styl
+      default: fa-duotone fa-info-circle light-blue
+      quection: fa-duotone fa-question-circle light-blue
+    copyright:  # 是否在复制时弹出版权提示
+      enable: true
+      title: '知识共享许可协议'
+      message: '请遵守 CC BY-NC-SA 4.0 协议。'
+      icon: 'fa-brands fa-creative-commons light-blue'
+    aplayer:
+      enable: true
+      play: fa-duotone fa-play light-blue
+      pause: fa-duotone fa-pause light-blue
+      error: fa-duotone fa-exclamation-square red
+  darkmode:
+    enable: true
+  # gitter:
+    # room: hexo-theme-volantis/community
+  scrollreveal:
+    enable: true
+
+custom_css:  
+  scrollbar:
+    size: 6px
+    border: 3px
+    color: '#0080C0'
+    hover: '#FF9800'
+  cursor:
+    enable: false
+  font_smoothing: true
+  # sidebar:
+  #   effect: [shadow] # [shadow, floatable, blur]
+  # body:
+  #   effect: [shadow] # [shadow, floatable, blur]
+  fontfamily:
+    logofont:
+      fontfamily: 'HFSnakylines, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'HFSnakylines'
+      url: https://justpureh2o.cn/fonts/HFSnakylines.woff2
+      weight: normal
+      style: normal
+    bodyfont:
+      fontfamily: 'HYJiangJunJ, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'HYJiangJunJ'
+      url: https://justpureh2o.cn/fonts/HYJiangJun-55W.woff2
+      weight: normal
+      style: normal
+    codefont:
+      fontfamily: 'JetbrainsMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'JetbrainsMono'
+      url: https://justpureh2o.cn/fonts/JetBrainsMono.woff2
+      weight: normal
+      style: normal
+
+rightmenus:
+  enable: true
+  order:
+    - plugins.navigation  
+    - hr
+    - plugins.inputBox
+    - plugins.seletctText
+    - plugins.elementCheck
+    - plugins.elementImage
+    - hr
+    - menus.prevNext
+    - hr
+    - menus.links
+    - hr
+    - menus.darkMode
+    - hr
+    - plugins.articlePage
+    - hr
+    - music
+  options:
+    iconPrefix: fa-duotone PETERRIVE
+    articleShowLink: true
+  plugins:
+    navigation: 
+      - {id: 'left', name: '转到上一页', icon: 'fa-duotone fa-arrow-left PETERRIVE', event: 'history.back()', group: 'navigation'}
+      - {id: 'right', name: '转到下一页', icon: 'fa-duotone fa-arrow-right PETERRIVE', event: 'history.forward()', group: 'navigation'}
+      - {id: 'redo', name: '刷新当前页面', icon: 'fa-duotone fa-redo-alt PETERRIVE', event: 'window.location.reload()', group: 'navigation'}
+      - {id: 'home', name: '回到首页', icon: 'fa-duotone fa-home PETERRIVE', link: '/', group: 'navigation'}
+      - {id: 'up', name: '回到顶部', icon: 'fa-duotone fa-arrow-up PETERRIVE', event: 'VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)', group: 'navigation'}
+    articlePage:
+      - {id: 'printMode', name: '打印页面', icon: 'fa-duotone fa-print TURQUOISE', event: 'printMode', group: 'articlePage'}
+      - {id: 'readMode', name: '阅读模式', icon: 'fa-duotone fa-book-open EMERALD', event: 'readMode', group: 'articlePage'}
+    inputBox:
+      - {id: 'copyPaste', name: '粘贴文本', icon: 'fa-duotone PETERRIVE fa-paste', event: 'copyPaste', group: 'inputBox'}
+      - {id: 'copyAll', name: '全选文本', icon: 'fa-duotone PETERRIVE fa-object-ungroup', event: 'copyAll', group: 'inputBox'}
+      - {id: 'copyCut', name: '剪切文本', icon: 'fa-duotone PETERRIVE fa-cut', event: 'copyCut', group: 'inputBox'}
+    seletctText:
+      - {id: 'copyText', name: '复制文本', icon: 'fa-duotone PETERRIVE fa-copy', event: 'copyText', group: 'seletctText'}
+      - {id: 'searchWord', name: '站内搜索', icon: 'fa-duotone PETERRIVE fa-search', event: 'OpenSearch(__text__)', group: 'seletctText'}
+      - {id: 'bingSearch', name: '必应搜索', icon: 'fa-duotone PETERRIVE fa-search', event: 'window.open(`https://cn.bing.com/search?q=${__text__}`)', group: 'seletctText'}
+    elementCheck:
+      - {id: 'openTab', name: '新标签页打开', icon: 'fa-duotone PETERRIVE fa-external-link-square-alt', event: 'window.open(__link__)', group: 'elementCheck'}
+      - {id: 'copyLink', name: '复制链接地址', icon: 'fa-duotone PETERRIVE fa-link', event: 'copyLink', group: 'elementCheck'}
+    elementImage:
+      - {id: 'downloadImg', name: '下载图片', icon: 'fa-duotone PETERRIVE fa-down-long', event: 'window.open(__link__)', group: 'elementImage'}
+      - {id: 'copyImg', name: '复制图片', icon: 'fa-duotone PETERRIVE fa-image', event: 'copyImg', group: 'elementImage'}
+      - {id: 'googleImg', name: '谷歌识图', icon: 'fa-duotone PETERRIVE fa-images', event: 'window.open(`https://www.google.com/searchbyimage?image_url=${__link__}`)', group: 'elementImage'}
+  menus:
+      darkMode: 
+        - {id: 'darkMode', name: '暗黑模式', icon: 'fa-duotone fa-moon WISTERIA', event: 'volantis.dark.toggle()', group: 'darkMode'}
+      prevNext:
+        - {id: 'prev', name: '查看上一篇', icon: 'fa-duotone fa-angles-left PETERRIVE', event: "volantis.rightmenu.jump('prev')", group: 'prevNext'}
+        - {id: 'next', name: '查看下一篇', icon: 'fa-duotone fa-angles-right PETERRIVE', event: "volantis.rightmenu.jump('next')", group: 'prevNext'}
+        

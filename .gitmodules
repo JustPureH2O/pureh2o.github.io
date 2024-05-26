@@ -1,0 +1,5 @@
+[submodule "themes/volantis"]
+	path = themes/volantis
+	url = https://github.com/JustPureH2O/hexo-theme-volantis.git
+	commit = f0023033f4e5bf5390d1f99db1858b384755d318
+    branch = 6.0

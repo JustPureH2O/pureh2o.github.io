@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /talks/
+Disallow: /articles/42133/
+Disallow: /articles/18935/
+Disallow: /articles/6668/
+Disallow: /articles/34393/

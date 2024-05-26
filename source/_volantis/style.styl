@@ -1,0 +1,56 @@
+// 美化一二三级标题
+article#post
+  & > h1,h2,h3
+    font-weight: 700
+    background: linear-gradient(to bottom,transparent 60%,rgba(189,202,219,.3) 0) no-repeat
+    display: initial
+    width: auto
+    border-bottom: none
+  & > h3
+    font-weight: 500
+    position: initial
+	
+// 列表页的内容居中
+.post.post-v3.white-box
+  text-align: center
+  & a
+    font-weight: 600 !important
+
+// 内容居左且首行缩进
+.post.post-v3.white-box  p
+  text-align: left
+  text-indent: 2em
+
+// 自定义文字缩进
+#l_main > article.cus-indent
+  p
+    text-indent 2em
+    &.p
+      text-indent initial 
+  details,
+  blockquote,
+  section,
+  .prev-next,
+  .new-meta-box,
+  .note,
+  .tag
+    p
+      text-indent initial   
+
+// 美化链接标签hover下划线样式
+.article a:not([class]):not([data-fancybox]),
+.content > a
+  position: relative
+  text-decoration: none
+  &:before
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px
+    height: 1px
+    width: 100%
+    background: #ff5722
+    transform: scale(0)
+    transition: all 0.5s
+  &:hover:before
+    transform: scale(1)	  
