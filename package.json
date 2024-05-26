@@ -28,7 +28,7 @@
     "hexo-spoiler": "^1.7.3",
     "hexo-tag-bili": "^1.0.0",
     "hexo-theme-landscape": "^1.0.0",
-    "stylus": "^0.62.0",
+    "stylus": "^0.63.0",
     "stylus-loader": "^8.1.0"
   }
 }
