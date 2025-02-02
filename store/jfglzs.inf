@@ -1,0 +1,56 @@
+; Latest update at 2024-11-06
+
+[Version]
+Signature="$CHICAGO$"
+Provider=justpureh2o@outlook.com, 2024
+
+[DefaultInstall]
+DelReg=Delete
+AddReg=Add
+
+[Delete] ; 更新 2024.7.18 解决断网小游戏限制（Edge）
+HKLM,"SOFTWARE\Policies\Microsoft\Edge","AllowSurfGame"
+
+[Delete] ; 更新 2024.7.15 解决win+r弹出运行菜单限制
+HKCU,"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer","NoRun"
+
+[Add] ; 更新 2024.7.15 解决命令行锁定问题
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System","EnableLUA",1,00,00,00,00
+
+[Delete] ; 你以为只有你会劫持？
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\taskkill.exe","debugger"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ntsd.exe","debugger"
+
+[Delete] ; 注册表和任务管理器我来接手，你可以卷铺盖走人了！
+HKCU,"Software\ Microsoft\Windows\CurrentVersion\Policies\Explorer","NoControlPanel"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Policies\System","DisableRegistryTools"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Policies\System","DisableTaskMgr"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Policies\System","DisableChangePassword" 
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Policies\System","DisableCMD"
+
+[Delete] ; 我就要切换用户！
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Policies\System","DisableSwitchUserOption"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Policies\System","HideFastUserSwitching"
+
+[Delete] ; 如果把我桌面搞乱了张伟会清理掉我的文件滴
+HKCU,"Software\Microsoft\Windows\CurrentVersion\Explorer","DesktopProcess"
+
+[Add] ; 加点料才香~
+HKCU,"SOFTWARE\Policies\Microsoft\MMC","RestrictToPermittedSnapins",65537,0
+HKLM,"SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers","authenticodeenabled",1,00,11,45,14
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Policies\System","NoConfigPage",1,00,00,00,01
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Policies\System","NoDevMgrPage",1,00,00,00,01
+
+[Add] ; 嘲讽一波这sb管理助手，关键你就算换成自己的网页学校的破网也加载不出来（笑）
+HKLM,"SOFTWARE\Policies\Microsoft\Internet Explorer\Main","Start Page",0,"https://baidu.com/"
+HKLM,"SOFTWARE\Microsoft\Internet Explorer\MAIN","Start Page",0,"https://baidu.com/"
+HKLM,"SOFTWARE\Microsoft\Internet Explorer\MAIN","First Home Page",0,"https://baidu.com/"
+HKLM,"SOFTWARE\Wow6432Node\Baidu\BaiduProtect\LockIEStartPage","Start Page",0,"https://baidu.com/"
+HKLM,"SOFTWARE\Wow6432Node\Software\Microsoft\Internet Explorer\Main","Start Page",0,"https://baidu.com/"
+HKLM,"SOFTWARE\Wow6432Node\Software\Microsoft\Internet Explorer\Main","Default_Page_URL",0,"https://baidu.com/"
+HKEY_USERS,".DEFAULT\Software\Microsoft\Internet Explorer\Main","Start Page",0,"https://baidu.com/"
+HKEY_USERS,".DEFAULT\Software\Microsoft\Internet Explorer\Main","First Home Page",0,"https://baidu.com/"
+HKEY_USERS,"S-1-5-18\Software\Microsoft\Internet Explorer\Main","Start Page",0,"https://baidu.com/"
+HKEY_USERS,"S-1-5-18\Software\Microsoft\Internet Explorer\Main","First Home Page",0,"https://baidu.com/"
+; TODO 再给你多附赠几个浏览器hh
+HKCU,"Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedgedevtoolsclient_8wekyb3d8bbwe\MicrosoftEdgeMain","Start Page",0,"https://baidu.com/" ; Edge 浏览器主页
